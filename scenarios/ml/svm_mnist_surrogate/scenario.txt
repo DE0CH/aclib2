@@ -1,0 +1,9 @@
+algo = python ./target_algorithms/surrogate/wrapper.py --quality 1 --pyrfr_wrapper ./target_algorithms/surrogate/svm_mnist/pyrfr_wrapper.svm_mnist.par10.random.pkl --pyrfr_model ./target_algorithms/surrogate/svm_mnist/pyrfr_model.svm_mnist.par10.random.bin --config_space ./target_algorithms/surrogate/svm_mnist/config_space.svm_mnist.par10.random.pcs --inst_feat_dict ./target_algorithms/surrogate/svm_mnist/inst_feat_dict.svm_mnist.par10.random.json --mem-limit 3072  --runsolver-path None --idle_time 100 --debug False 
+execdir = .
+deterministic = 1
+run_obj = quality
+cutoff_time = 1000
+runcount_limit = 500
+paramfile = ./target_algorithms/surrogate/svm_mnist/config_space.svm_mnist.par10.random.pcs
+instance_file = ./instances/ml/sets/mnist/training.txt
+test_instance_file = ./instances/ml/sets/mnist/test.txt

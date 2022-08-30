@@ -1,0 +1,12 @@
+algo = python ./target_algorithms/surrogate/wrapper.py --quality 0 --pyrfr_wrapper ./target_algorithms/surrogate/cplex_rcw/pyrfr_wrapper.cplex_rcw.par10.random.pkl --pyrfr_model ./target_algorithms/surrogate/cplex_rcw/pyrfr_model.cplex_rcw.par10.random.bin --config_space ./target_algorithms/surrogate/cplex_rcw/config_space.cplex_rcw.par10.random.pcs --inst_feat_dict ./target_algorithms/surrogate/cplex_rcw/inst_feat_dict.cplex_rcw.par10.random.json --mem-limit 3072  --runsolver-path None --idle_time 100 --debug False 
+execdir = .
+deterministic = 1
+run_obj = runtime
+overall_obj = mean10
+cutoff_time = 10000
+wallclock_limit = 172800
+tuner-timeout = 172800
+paramfile = ./target_algorithms/surrogate/cplex_rcw/config_space.cplex_rcw.par10.random.pcs
+instance_file = ./instances/mip/sets/RCW/training.txt
+test_instance_file = ./instances/mip/sets/RCW/test.txt
+feature_file = ./instances/mip/sets/RCW/features.txt

@@ -1,0 +1,12 @@
+algo = python ./target_algorithms/surrogate/wrapper.py --quality 0 --pyrfr_wrapper ./target_algorithms/surrogate/lpg_zenotravel/pyrfr_wrapper.lpg_zenotravel.par10.random.pkl --pyrfr_model ./target_algorithms/surrogate/lpg_zenotravel/pyrfr_model.lpg_zenotravel.par10.random.bin --config_space ./target_algorithms/surrogate/lpg_zenotravel/config_space.lpg_zenotravel.par10.random.pcs --inst_feat_dict ./target_algorithms/surrogate/lpg_zenotravel/inst_feat_dict.lpg_zenotravel.par10.random.json --mem-limit 3072  --runsolver-path None --idle_time 100 --debug False 
+execdir = .
+deterministic = 0
+run_obj = runtime
+overall_obj = mean10
+cutoff_time = 300
+wallclock_limit = 172800
+tuner-timeout = 172800
+paramfile = ./target_algorithms/surrogate/lpg_zenotravel/config_space.lpg_zenotravel.par10.random.pcs
+instance_file = ./instances/planning/sets/zenotravel/training.txt
+test_instance_file = ./instances/planning/sets/zenotravel/test.txt
+feature_file = ./instances/planning/sets/zenotravel/features.txt

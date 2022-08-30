@@ -1,0 +1,13 @@
+algo = python ./target_algorithms/surrogate/wrapper.py --quality 0 --pyrfr_wrapper ./target_algorithms/surrogate/minisat_randomk3/pyrfr_wrapper.minisat_randomk3.par10.random.pkl --pyrfr_model ./target_algorithms/surrogate/minisat_randomk3/pyrfr_model.minisat_randomk3.par10.random.bin --config_space ./target_algorithms/surrogate/minisat_randomk3/config_space.minisat_randomk3.par10.random.pcs --inst_feat_dict ./target_algorithms/surrogate/minisat_randomk3/inst_feat_dict.minisat_randomk3.par10.random.json --mem-limit 3072  --runsolver-path None --idle_time 100 --debug False 
+execdir = .
+deterministic = 0
+run_obj = runtime
+overall_obj = mean10
+cutoff_time = 300
+instance_file = ./instances/sat/sets/K3-CSSC14/training.txt
+test_instance_file = ./instances/sat/sets/K3-CSSC14/test.txt
+feature_file = ./instances/sat/sets/K3-CSSC14/features.txt
+paramfile = ./target_algorithms/surrogate/minisat_randomk3/config_space.minisat_randomk3.par10.random.pcs
+wallclock_limit = 172800
+tuner-timeout = 172800
+

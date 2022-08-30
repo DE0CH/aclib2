@@ -1,0 +1,13 @@
+algo = python ./target_algorithms/surrogate/wrapper.py --quality 0 --pyrfr_wrapper ./target_algorithms/surrogate/clasp_weighted/pyrfr_wrapper.clasp_weighted.par10.random.pkl --pyrfr_model ./target_algorithms/surrogate/clasp_weighted/pyrfr_model.clasp_weighted.par10.random.bin --config_space ./target_algorithms/surrogate/clasp_weighted/config_space.clasp_weighted.par10.random.pcs --inst_feat_dict ./target_algorithms/surrogate/clasp_weighted/inst_feat_dict.clasp_weighted.par10.random.json --mem-limit 3072 --runsolver-path None --idle_time 100 --debug False 
+execdir = .
+deterministic = 0
+run_obj = runtime
+overall_obj = mean10
+cutoff_time = 900
+wallclock_limit = 302400
+tuner-timeout = 302400
+paramfile = ./target_algorithms/surrogate/clasp_weighted/config_space.clasp_weighted.par10.random.pcs
+instance_file = ./instances/asp/sets/weighted-sequence/training.txt
+test_instance_file = ./instances/asp/sets/weighted-sequence/test.txt
+feature_file = ./instances/asp/sets/weighted-sequence/features.txt
+

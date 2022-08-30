@@ -1,0 +1,13 @@
+algo = python ./target_algorithms/surrogate/wrapper.py --quality 0 --pyrfr_wrapper ./target_algorithms/surrogate/probsat_7sat90/pyrfr_wrapper.probsat_7sat90.par10.random.pkl --pyrfr_model ./target_algorithms/surrogate/probsat_7sat90/pyrfr_model.probsat_7sat90.par10.random.bin --config_space ./target_algorithms/surrogate/probsat_7sat90/config_space.probsat_7sat90.par10.random.pcs --inst_feat_dict ./target_algorithms/surrogate/probsat_7sat90/inst_feat_dict.probsat_7sat90.par10.random.json --mem-limit 3072  --runsolver-path None --idle_time 100 --debug False 
+execdir = .
+deterministic = 1
+run_obj = runtime
+overall_obj = mean10
+cutoff_time = 300
+instance_file = ./instances/sat/sets/7sat90/training.txt
+test_instance_file = ./instances/sat/sets/7sat90/test.txt
+feature_file = ./instances/sat/sets/7sat90/features.txt
+paramfile = ./target_algorithms/surrogate/probsat_7sat90/config_space.probsat_7sat90.par10.random.pcs
+wallclock_limit = 172800
+tuner-timeout = 172800
+

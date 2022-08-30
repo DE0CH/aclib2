@@ -1,0 +1,12 @@
+algo = python ./target_algorithms/surrogate/wrapper.py --quality 0 --pyrfr_wrapper ./target_algorithms/surrogate/lpg_satellite/pyrfr_wrapper.lpg_satellite.par10.random.pkl --pyrfr_model ./target_algorithms/surrogate/lpg_satellite/pyrfr_model.lpg_satellite.par10.random.bin --config_space ./target_algorithms/surrogate/lpg_satellite/config_space.lpg_satellite.par10.random.pcs --inst_feat_dict ./target_algorithms/surrogate/lpg_satellite/inst_feat_dict.lpg_satellite.par10.random.json --mem-limit 3072  --runsolver-path None --idle_time 100 --debug False 
+execdir = .
+deterministic = 0
+run_obj = runtime
+overall_obj = mean10
+cutoff_time = 300
+wallclock_limit = 172800
+tuner-timeout = 172800
+paramfile = ./target_algorithms/surrogate/lpg_satellite/config_space.lpg_satellite.par10.random.pcs
+instance_file = ./instances/planning/sets/satellite/training.txt
+test_instance_file = ./instances/planning/sets/satellite/test.txt
+feature_file = ./instances/planning/sets/satellite/features.txt
