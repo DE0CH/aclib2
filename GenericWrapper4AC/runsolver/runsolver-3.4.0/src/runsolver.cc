@@ -75,6 +75,9 @@
 #include <sys/msg.h>
 #include <sys/utsname.h>
 
+#ifdef WITH_NUMA
+#include <numa.h>
+#endif
 
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE
@@ -995,6 +998,42 @@ public:
 
 };
 
+
+#ifdef WITH_NUMA
+void numaInfo()
+{
+  if(numa_available()==-1)
+    return;
+  
+  int nbNodes=numa_num_configured_nodes();
+  long mem,memFree;
+  
+  cout << "NUMA information:\n";
+  cout << "  number of nodes: " << nbNodes << endl;
+  for(int i=0;i<nbNodes;++i)
+  {
+    mem=numa_node_size(i, (long long int*)&memFree);
+    mem/=1024*1024;
+    memFree/=1024*1024;
+    cout << "  memory of node " << i << ": " << mem << " MiB (" << memFree << " MiB free)\n";
+  }
+
+
+  cout << "  node distances:\n";
+  for(int l=0;l<nbNodes;++l)
+  {
+    cout << "   ";
+    for(int c=0;c<nbNodes;++c)
+    {
+      cout << setw(4) << numa_distance(l,c);
+    }
+    cout << endl;
+  }
+  
+  cout << endl;
+}
+#endif
+
 // static members
 Watcher *RunSolver::instanceWatcher=nullptr;
 TimeStamper RunSolver::tStamp;
@@ -1260,6 +1299,10 @@ int main(int argc, char **argv)
     // (i.e. after the possible redirection have been set up)
     printVersion();
 
+#ifdef WITH_NUMA
+    numaInfo();
+#endif
+    
     if (optind == argc)
       usage (argv[0]);
 
