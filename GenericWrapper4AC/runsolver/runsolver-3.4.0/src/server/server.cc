@@ -5,6 +5,9 @@ https://stackoverflow.com/questions/561245/virtual-memory-usage-from-java-under-
 https://www.selenic.com/smem/
 pmap
  */
+
+#include <vector>
+#include <string>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>

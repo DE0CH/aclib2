@@ -29,16 +29,16 @@ install: runsolver
 include $(SRC:.cc=.d)
 
 .cc.o:
-	g++ $(CFLAGS) $(DEBUG) -c $*.cc
+	$(CXX) $(CFLAGS) $(DEBUG) -c $*.cc
 
 runsolver: $(OBJ)
-	g++  $(LDFLAGS) $(DEBUG) -o $@ $^ -pthread $(LIBS)
+	$(CXX)  $(LDFLAGS) $(DEBUG) -o $@ $^ -pthread $(LIBS)
 
 testlimit: testlimit.cc
-	g++ -o testlimit testlimit.cc
+	$(CXX) -o testlimit testlimit.cc
 
 testthread: testthread.cc
-	g++ -o testthread testthread.cc -pthread
+	$(CXX) -o testthread testthread.cc -pthread
 
 .PHONY: clean realclean archive
 
