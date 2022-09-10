@@ -6,3 +6,4 @@ instances/*/data/*
 *.pkl
 target_algorithms/surrogate/*/
 venv
+cplex_regions200_surrogate
