@@ -1,4 +1,4 @@
-git+https://github.com/automl/GenericWrapper4AC@master
+./GenericWrapper4AC
 numpy
 scipy
 tabulate

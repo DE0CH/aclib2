@@ -103,7 +103,7 @@ All available epms are listed at the end of this document.
 
 To run a scenario call:
 
-`python aclib2/aclib/run.py -s cplex_regions200_surrogate -c SMAC2 -n 2 --env local --startup startup.sh`
+`python aclib/run.py -s cplex_regions200_surrogate -c SMAC2 -n 2 --env local --startup startup.sh`
 
 It runs the scenario __cplex_regions200__ with 2 independent SMAC (v2) runs using the surrogate benchmark.
 

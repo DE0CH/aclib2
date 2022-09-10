@@ -18,12 +18,12 @@ class InstallRunsolver(install):
 
     def run(self):
         # Build the runsolver
-        #sys.stdout.write('Building runsolver\n')
-        #cur_pwd = os.getcwd()
+        sys.stdout.write('Building runsolver\n')
+        cur_pwd = os.getcwd()
 
-        #os.chdir(RUNSOLVER_LOCATION)
-        #subprocess.check_call('make')
-        #os.chdir(cur_pwd)
+        os.chdir(RUNSOLVER_LOCATION)
+        subprocess.check_call('make')
+        os.chdir(cur_pwd)
 
         # Create a fresh binaries directory
         try:
