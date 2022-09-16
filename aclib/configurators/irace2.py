@@ -34,6 +34,7 @@ class IRACE2(BaseConfigurator):
         self._bin = "./configurators/irace_2.0%s/run_irace.sh" % (suffix_dir)
         self.aclib_root = aclib_root
         
+        self._converter_script_py = self._converter_script = os.path.abspath("%s/configurators/irace_2.0%s/convert_to_irace_scenario.py" % (aclib_root, suffix_dir))
         self._converter_script = os.path.abspath("%s/configurators/irace_2.0%s/convert_to_irace_scenario.pl" % (aclib_root, suffix_dir))
         self._traj_script = os.path.abspath("%s/configurators/irace_2.0%s/get_traj.py" % (aclib_root, suffix_dir))
         self._defaut_script = os.path.abspath("%s/configurators/irace_3.3%s/create_default_file.py" % (aclib_root, suffix_dir))
@@ -77,6 +78,12 @@ class IRACE2(BaseConfigurator):
         self.logger.info("Call: %s" %(cmd))
         p = Popen(cmd, shell=True)
         p.communicate()
+
+        cmd = "%s %s" %(self._converter_script_py, os.path.split(new_scenario_file)[1])
+        self.logger.info("Call: %s" %(cmd))
+        p = Popen(cmd, shell=True)
+        p.communicate()
+
 
         cmd = "python %s %s > paramfile.default.irace" %(self._defaut_script, sac.pcs_file)
         self.logger.info("Call: %s" % (cmd))

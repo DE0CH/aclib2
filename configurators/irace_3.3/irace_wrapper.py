@@ -4,6 +4,7 @@
 
 import sys
 import subprocess
+import os
 
 cutoff = sys.argv[2]
 instance=sys.argv[4]
@@ -16,7 +17,18 @@ for i,c in enumerate(config):
         config[i] = c[1:] # remove leading -
 config = " ".join(config)
 
-cmd = "python3 {wrapper} --overwrite_cost_runtime --instance {instance} --cutoff {cutoff} --seed {seed} {config}".format(**{"wrapper": wrapper, "config": config, "instance": instance, "seed": seed, "cutoff":cutoff})
+extra_args = ''
+
+try: 
+    with open('extra_args.txt') as f:
+        extra_args = f.read().strip()
+except FileNotFoundError:
+    print("did not find extra args, skipping")
+
+cmd = f"python3 {wrapper} {extra_args} --overwrite_cost_runtime --instance {instance} --cutoff {cutoff} --seed {seed} {config}".format(**{"wrapper": wrapper, "config": config, "instance": instance, "seed": seed, "cutoff":cutoff})
+
+
+print(os.getcwd())
 
 print(cmd)
 

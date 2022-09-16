@@ -70,6 +70,7 @@ my %coding = (
               'overall-obj' => ['testType', $handle_overall_obj],
               'wallclock-limit' => ['maxTime', $as_numeric],
               'cpu-limit' => ['maxTime', $as_numeric],
+              'tuner-timeout' => ['maxTime', $as_numeric],
               'max-evaluations' => ['maxExperiments', $as_numeric],
               'training-instances' => ['trainInstancesFile', $bindir_path],
               #'test-instances' => ['testInstances'],
