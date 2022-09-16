@@ -50,6 +50,10 @@ AClib requires Python >3.5 (implemented under Anaconda 3.5) and Java >8
 
 Some target algorithms may have further dependencies.
 
+## Dependencies
+
+swig, numactl (`libnuma-dev` on Debian) <= v2.0.14 (see the [breaking commit](https://github.com/numactl/numactl/commit/a7c4bc790a191d3e42b63850b409c1a72b75a4e1)), c compiler. See `.devcontainer/Dockerfile` for reference.
+
 ## [AClib] Requirements for AC procedures
 
 ### SMAC
@@ -103,7 +107,7 @@ All available epms are listed at the end of this document.
 
 To run a scenario call:
 
-`python aclib/run.py -s cplex_regions200_surrogate -c SMAC2 -n 2 --env local --startup startup.sh`
+`python aclib/run.py -s cplex_regions200_surrogate -c IRACE3 -n 2 --env local --startup startup.sh`
 
 It runs the scenario __cplex_regions200__ with 2 independent SMAC (v2) runs using the surrogate benchmark.
 
