@@ -13,3 +13,9 @@ USER vscode
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/DE0CH/dotfiles/master/setup-zsh.sh)"
 WORKDIR /home/vscode
 
+RUN apt-get install unzip r-base
+RUN Rscript -e "install.packages('irace', repos='https://cloud.r-project.org')"
+
+USER vscode
+RUN echo 'export PATH=/usr/local/lib/R/site-library/irace/bin:$PATH' >> /home/vscode/.bashrc
+RUN echo 'export PATH=/usr/local/lib/R/site-library/irace/bin:$PATH' >> /home/vscode/.zshenv

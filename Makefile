@@ -2,6 +2,9 @@
 
 all: aaa
 
+download:
+	curl https://www.automl.org/wp-content/uploads/2019/10/cplex_regions200.zip -O
+	unzip cplex_regions200.zip 
 
 aaa: 
 	cd GenericWrapper4AC/runsolver/runsolver-3.4.0/src && $(MAKE)
