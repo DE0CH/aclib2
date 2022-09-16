@@ -6,6 +6,8 @@ import traceback
 import setuptools
 from subprocess import Popen
 from setuptools.command.install import install
+from pathlib import Path
+
 
 RUNSOLVER_LOCATION = os.path.join(os.path.dirname(__file__), 'runsolver',
                                   'runsolver-3.4.0', 'src')
@@ -25,6 +27,8 @@ class InstallRunsolver(install):
         subprocess.check_call(['make', 'clean'])
         subprocess.check_call('make')
         os.chdir(cur_pwd)
+        print("hello world" + os.getcwd())
+        print(BINARIES_DIRECTORY)
 
         # Create a fresh binaries directory
         try:
@@ -32,10 +36,7 @@ class InstallRunsolver(install):
         except Exception:
             pass
 
-        try:
-            os.makedirs(BINARIES_DIRECTORY)
-        except Exception:
-            pass
+        Path(BINARIES_DIRECTORY).mkdir(parents=True, exist_ok=True)
 
         # Copy the runsolver into the test directory so tests can be run
         try:
@@ -74,7 +75,6 @@ setuptools.setup(
     test_suite='nose.collector',
     tests_require=["nose", "numpy", "scipy", "scikit-learn"],
     cmdclass={'install': InstallRunsolver},
-    include_package_data=True,
     package_data={"genericWrapper4AC": ["binaries/runsolver"]},
     author='Marius Lindauer and Katharina Eggensperger',
     author_email='lindauer@informatik.uni-freiburg.de',
