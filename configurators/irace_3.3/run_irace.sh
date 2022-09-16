@@ -1,9 +1,9 @@
-IRACE=./configurators/irace_3.3/installed/irace/bin/irace
+export PATH="$(Rscript -e "cat(paste0(system.file(package='irace', 'bin', mustWork=TRUE), ':'))" 2> /dev/null)${PATH}"
+IRACE=$(which irace)
 if [ ! -x $IRACE ]; then
     echo "$0: error: $IRACE not found or not executable"
     exit 1
 fi
-
 
 BINDIR="$(dirname "$(readlink -f "$IRACE")")"
 export R_LIBS=${BINDIR%irace/bin}:"$R_LIBS"
