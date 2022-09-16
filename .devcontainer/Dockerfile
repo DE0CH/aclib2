@@ -13,7 +13,8 @@ USER vscode
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/DE0CH/dotfiles/master/setup-zsh.sh)"
 WORKDIR /home/vscode
 
-RUN apt-get install unzip r-base
+USER root
+RUN apt-get install -y unzip r-base
 RUN Rscript -e "install.packages('irace', repos='https://cloud.r-project.org')"
 
 USER vscode
