@@ -22,6 +22,7 @@ class InstallRunsolver(install):
         cur_pwd = os.getcwd()
 
         os.chdir(RUNSOLVER_LOCATION)
+        subprocess.check_call(['make', 'clean'])
         subprocess.check_call('make')
         os.chdir(cur_pwd)
 

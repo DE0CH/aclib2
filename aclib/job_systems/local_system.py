@@ -1,6 +1,8 @@
 import os
 from subprocess import Popen
+import subprocess
 import logging
+from multiprocessing.pool import ThreadPool
 
 __author__ = "Marius Lindauer"
 __version__ = "0.0.1"
@@ -37,8 +39,12 @@ class LocalSystem(object):
         with open(cmd_fn, "w") as fp:
             for cmd in cmds:
                 fp.write("'%s'\n" %(cmd))
-            
-        cmd = "cat \"%s\" | xargs -n 1 -L 1 -P %d bash -c" %(cmd_fn, cores_per_job)
-        self.logger.info(cmd)
-        p = Popen(cmd, shell=True)
-        p.communicate()
+        
+
+        def send_cmd(cmd):
+            self.logger.info(cmd)
+            subprocess.run(cmd, shell=True)
+
+        with ThreadPool(cores_per_job) as pool:
+            pool.map(send_cmd, cmds)
+

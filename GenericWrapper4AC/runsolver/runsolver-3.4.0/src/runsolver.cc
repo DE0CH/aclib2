@@ -1012,7 +1012,7 @@ void numaInfo()
   cout << "  number of nodes: " << nbNodes << endl;
   for(int i=0;i<nbNodes;++i)
   {
-    mem=numa_node_size(i, (long long int*)&memFree);
+    mem=numa_node_size(i, &memFree);
     mem/=1024*1024;
     memFree/=1024*1024;
     cout << "  memory of node " << i << ": " << mem << " MiB (" << memFree << " MiB free)\n";
