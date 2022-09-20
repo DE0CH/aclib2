@@ -9,7 +9,7 @@ STATIC=
 
 WSIZE:=$(shell if [ `uname -m` = 'x86_64' ] ; then echo 64; else echo 32; fi )
 
-CFLAGS=-std=c++11 -DWITH_NUMA -Dtmpdebug -Wall -DVERSION=\"$(VERSION)\" -DSVNVERSION=\"$(SVNVERSION)\" -DWSIZE=$(WSIZE)
+CFLAGS=-std=c++11 -DWITH_NUMA -Dtmpdebug -Wall -DVERSION=\"$(VERSION)\" -DSVNVERSION=\"$(SVNVERSION)\" -DWSIZE=$(WSIZE) -I./include/numactl-2.0.13
 LDFLAGS= $(STATIC) -Wl,--build-id
 LIBS=-lnuma
 
