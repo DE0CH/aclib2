@@ -9,9 +9,8 @@ STATIC=
 
 WSIZE:=$(shell if [ `uname -m` = 'x86_64' ] ; then echo 64; else echo 32; fi )
 
-CFLAGS=-std=c++11 -DWITH_NUMA -Dtmpdebug -Wall -DVERSION=\"$(VERSION)\" -DSVNVERSION=\"$(SVNVERSION)\" -DWSIZE=$(WSIZE) -I./include/numactl-2.0.13
+CFLAGS=-Dtmpdebug -Wall -DVERSION=\"$(VERSION)\" -DSVNVERSION=\"$(SVNVERSION)\" -DWSIZE=$(WSIZE)
 LDFLAGS= $(STATIC) -Wl,--build-id
-LIBS=-lnuma
 
 ifneq ($(findstring alineos.net,$(HOSTNAME)),)
 # if needed, path to the dynamic library we use
