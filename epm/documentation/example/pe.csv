@@ -1,0 +1,19 @@
+instance, seed, status, performance, config, [misc]
+instance_1, 0, TIMEOUT, 0.153726, -x1=0
+instance_2, 0, UNSAT, 0.01726, -x1=0
+instance_2, 1, UNSAT, 13.801, -x1=1, -x2=0.0
+instance_1, 1, UNSAT, 1.801, -x1=1, -x2=0.0
+instance_2, 1, UNSAT, 10.053806, -x2=1.0
+instance_1, 1, SAT, 0.053806, -x2=1.0
+instance_2, 0, UNSAT, 1.8494, -x1=3, -x2=0.084
+instance_1, 0, TIMEOUT, 0.8494, -x1=3, -x2=0.084
+instance_1, 1, SAT, 1.228821, -x1=0, -x2=0.9921
+instance_2, 1, SAT, 0.228821, -x1=0, -x2=0.9921
+instance_1, 0, SAT, 1.149175, -x1=1, -x2=0.2231
+instance_2, 0, TIMEOUT, 2.149175, -x1=1, -x2=0.2231
+instance_2, 1, UNSAT, 5.8494, -x2=0.75
+instance_1, 1, UNSAT, 1.84, -x2=0.75
+instance_2, 1, SAT, 3.456, -x1=3, -x2=0.25
+instance_1, 1, SAT, 2.314, -x1=3, -x2=0.25
+instance_2, 0, UNSAT, 1.85, -x1=3, -x2=0.084
+instance_1, 0, TIMEOUT, 0.8009, -x1=3, -x2=0.084

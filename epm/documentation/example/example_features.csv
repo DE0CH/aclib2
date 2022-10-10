@@ -1,0 +1,3 @@
+INSTANCE_NAME,nvarsOrig,nclausesOrig,nvars,nclauses,reducedVars,reducedClauses,Pre-featuretime,vars-clauses-ratio
+instance_1,39036,117044,39035,117043,0.000025618,0.000008544,0.08,0.333509907
+instance_2,84331,245905,84330,245904,0.000011858,0.000004067,0.14,0.342938708

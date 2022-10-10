@@ -1,0 +1,4 @@
+# example parameter configuration space
+
+x2 [0.0,1.0][0.5] # x2 is a continous parameter in the interval [0.0, 1.0] its default value is 0.5
+x1 {0,1,2,3}[2] # x1 is a categorical parameter, its default value is 2
