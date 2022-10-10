@@ -7,4 +7,4 @@ git+https://github.com/automl/plotting_scripts.git
 ConfigSpace > 0.4
 pandas
 swig
-git+https://bitbucket.org/mlindauer/epm.git
+./epm

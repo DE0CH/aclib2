@@ -20,3 +20,12 @@ RUN Rscript -e "install.packages('irace', repos='https://cloud.r-project.org')"
 USER vscode
 RUN echo 'export PATH=/usr/local/lib/R/site-library/irace/bin:$PATH' >> /home/vscode/.bashrc
 RUN echo 'export PATH=/usr/local/lib/R/site-library/irace/bin:$PATH' >> /home/vscode/.zshenv
+
+USER root
+RUN apt-get install -y build-essential libboost-all-dev swig doxygen git cmake python3 python3-pip ruby-dev lcov
+RUN gem install coveralls-lcov
+USER vscode
+RUN python3 -m pip install --upgrade pip
+RUN pip3 install --user -U pip-tools
+RUN echo 'export PATH="/home/vscode/.local/bin:$PATH"' >> /home/vscode/.zshenv
+RUN pip3 install ipython
