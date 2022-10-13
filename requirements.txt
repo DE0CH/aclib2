@@ -8,3 +8,4 @@ ConfigSpace > 0.4
 pandas
 swig
 ./epm
+ipykernel

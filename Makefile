@@ -10,6 +10,7 @@ build:
 	cd GenericWrapper4AC/runsolver/runsolver-3.4.0/src && $(MAKE)
 	mkdir -p GenericWrapper4AC/genericWrapper4AC/binaries
 	cp GenericWrapper4AC/runsolver/runsolver-3.4.0/src/runsolver GenericWrapper4AC/genericWrapper4AC/binaries/runsolver
+	cd random_forest_run && mkdir -p build && cd build && cmake .. && $(MAKE)
 
 clean:
 	cd GenericWrapper4AC/runsolver/runsolver-3.4.0/src && $(MAKE) clean
